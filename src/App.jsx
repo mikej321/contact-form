@@ -4,31 +4,58 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  return <Form />
+}
 
+const Form = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="form_container">
+      <h1 className="title">Contact Us</h1>
+      <div className="form_input first_name_input">
+        <label htmlFor="first_name">
+          First Name <span>*</span>
+        </label>
+        <input type="text" name="first_name" id="first_name" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="form_input last_name_input">
+        <label htmlFor="last_name">
+          Last Name <span>*</span>
+        </label>
+        <input type="text" name="last_name" id="last_name" />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <div className="form_input email_input">
+        <label htmlFor="email">
+          Email Address <span>*</span>
+        </label>
+        <input type="text" name="email" id="email" />
+      </div>
+      <div className="form_input query_input">
+        <label>
+          Query Type <span>*</span>
+        </label>
+        <div className="query_radio_buttons">
+          <div className="radio_container">
+            <input type="radio" name="gen_inquiry" id="gen_inquiry" />
+            <p>General Enquiry</p>
+          </div>
+          <div className="radio_container">
+            <input type="radio" name="sup_request" id="sup_request" />
+            <p>Support Request</p>
+          </div>
+        </div>
+      </div>
+      <div className="form_input message_input">
+        <label htmlFor="message">Message 
+          <span>*</span>
+        </label>
+        <input className="message_area" type="text" name="message" id="message" />
+      </div>
+      <div className="consent_container">
+        <input type="checkbox" name="consent_check" id="consent_check" />
+        <p>I consent to being contacted by the team <span>*</span></p>
+      </div>
+      <button className="submit_button" type="button">Submit</button>
+    </div>
   )
 }
 
